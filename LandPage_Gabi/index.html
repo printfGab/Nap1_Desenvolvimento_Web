@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Atividades Acadêmicas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="grid-container">
+        
+        <header class="header">
+            <div class="logo">AtivTrack</div>
+            <nav class="nav">
+                <a href="#inicio">Início</a>
+                <a href="#progresso">Progresso</a>
+                <a href="#cadastro">Cadastrar</a>
+                <a href="#atividades">Visualizar</a>
+            </nav>
+        </header>
+
+        <section id="inicio" class="hero-section">
+            <h1>Gerencie suas Atividades Acadêmicas</h1>
+            <p>Cadastre e controle suas horas de Pesquisa, Extensão, Ensino e Gestão em um só lugar.</p>
+            <a href="#cadastro" class="btn-hero">Começar Agora</a>
+        </section>
+
+        <section id="progresso" class="progress-section">
+            <h2>Seu Progresso de Horas</h2>
+            
+            <div class="cards-container">
+                <div class="card meta">
+                    <h3>Horas Necessárias</h3>
+                    <p id="hoursNeeded">250h</p>
+                </div>
+                <div class="card cadastradas">
+                    <h3>Horas Cadastradas</h3>
+                    <p id="hoursRegistered">0h</p>
+                </div>
+                <div class="card restantes">
+                    <h3>Horas Restantes</h3>
+                    <p id="hoursRemaining">250h</p>
+                </div>
+            </div>
+
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <div id="progressText" class="progress-text">0% Concluído</div>
+        </section>
+
+        <section id="cadastro" class="form-section">
+            <h2>Nova Atividade</h2>
+            <form id="activityForm" novalidate>
+                <div class="input-group">
+                    <label for="actName">Nome da Atividade</label>
+                    <input type="text" id="actName" placeholder="Ex: Projeto de Iniciação Científica" required>
+                    <span class="error-message" id="nameError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="actGroup">Grupo da Atividade</label>
+                    <select id="actGroup" required>
+                        <option value="" disabled selected>Selecione um grupo</option>
+                        <option value="Pesquisa">Pesquisa</option>
+                        <option value="Extensão">Extensão</option>
+                        <option value="Ensino">Ensino</option>
+                        <option value="Gestão/Representação">Gestão / Representação</option>
+                    </select>
+                    <span class="error-message" id="groupError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="actHours">Carga Horária (horas)</label>
+                    <input type="number" id="actHours" min="1" placeholder="Ex: 40" required>
+                    <span class="error-message" id="hoursError"></span>
+                </div>
+
+                <button type="submit" class="btn-submit">Adicionar Atividade</button>
+            </form>
+        </section>
+
+        <section id="atividades" class="table-section">
+            <h2>Atividades Cadastradas</h2>
+            <div class="table-wrapper">
+                <table id="activitiesTable">
+                    <thead>
+                        <tr>
+                            <th>Nome da Atividade</th>
+                            <th>Grupo</th>
+                            <th>Carga Horária</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 AtivTrack. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
